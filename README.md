@@ -9,7 +9,7 @@
         </ul>
     <li>Waterfall</li>
         <ul>
-            <li>General: Waterfall Methodology is a sequential design process, this means that the stages are completed stage by stage. As the process is sequential, once the stage has been completed, it is difficult for developers to go back to a previous stage. Therefore, the project outcome must be clearly defined at the beginning of the project.</li></br>
+            <li>Waterfall Methodology is a sequential design process, this means that the stages are completed stage by stage. As the process is sequential, once the stage has been completed, it is difficult for developers to go back to a previous stage. Therefore, the project outcome must be clearly defined at the beginning of the project.</li></br>
             <li>
                 Pros:
                 <ol>

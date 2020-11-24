@@ -14,13 +14,13 @@
         <li>Cons:</li>
     </ul>
  
-    <li></li>
+    <li>Placeholder</li>
     <ul>
         <li>Pros:</li>
         <li>Cons:</li>
     </ul>
   
-    <li></li>
+    <li>Placeholder</li>
     <ul>
         <li>Pros:</li>
         <li>Cons:</li>

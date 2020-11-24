@@ -1,7 +1,7 @@
 # Assignment1
 
 Software Development Methodologies:
-1. Agile:
+1. Agile:<br/>
     Pros:
     Cons:
   

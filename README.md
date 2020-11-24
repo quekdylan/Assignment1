@@ -1,10 +1,10 @@
 # Assignment1
 
-Software Development Methodologies:
+<strong>Software Development Methodologies:</strong>
 1. Agile:<br/>
-    Pros:
-    Cons:
-  
+    Pros:<br/>
+    Cons:<br/>
+  <br/>
 2. Waterfall
     Pros:
     Cons:

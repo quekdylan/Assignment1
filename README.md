@@ -2,12 +2,12 @@
 
 <strong>Software Development Methodologies:</strong>
 <ol>
-    <li>Agile</li>
+    <li><strong>Agile</strong></li>
         <ul>
             <li>Pros:</li>
             <li>Cons:</li>
         </ul>
-    <li>Waterfall</li>
+    <li><strong>Waterfall</strong></li>
         <ul>
             <li>Waterfall Methodology is a sequential design process, this means that the stages are completed stage by stage. As the process is sequential, once the stage has been completed, it is difficult for developers to go back to a previous stage. Therefore, the project outcome must be clearly defined at the beginning of the project.</li></br>
             <li>
@@ -37,12 +37,12 @@
             </li>
             </br>
         </ul>
-    <li>Placeholder</li>
+    <li><strong>Placeholder</strong></li>
         <ul>
             <li>Pros:</li>
             <li>Cons:</li>
         </ul>
-    <li>Placeholder</li>
+    <li><strong>Placeholder</strong></li>
         <ul>
             <li>Pros:</li>
             <li>Cons:</li>

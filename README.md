@@ -1,21 +1,31 @@
 # Assignment1
 
 <strong>Software Development Methodologies:</strong>
-1. <strong>Agile</strong>:<br/>
-    Pros:<br/><br/>
-    Cons:<br/><br/>
+<ol>
+    <li>Agile</li>
+    <ul>
+        <li>Pros:</li>
+        <li>Cons:</li>
+    </ul>
 
-2. <strong>Waterfall</strong><br/>
-    Pros: <br/><br/>
-    Cons: <br/><br/>
+    <li>Waterfall</li>
+    <ul>
+        <li>Pros:</li>
+        <li>Cons:</li>
+    </ul>
  
- 3.
-    Pros:
-    Cons:
-    
- 4.
-    Pros:
-    Cons:
-    
-Summary.    
+    <li></li>
+    <ul>
+        <li>Pros:</li>
+        <li>Cons:</li>
+    </ul>
+  
+    <li></li>
+    <ul>
+        <li>Pros:</li>
+        <li>Cons:</li>
+    </ul>
+</ol>    
+
+<strong>Summary</strong></br>    
 Why we picked Agile:

@@ -52,6 +52,9 @@
         </ul>
     <li><strong>Spiral</strong></li>
         <ul>
+            <li>
+                Spiral Model is a combination of a waterfall model and iterative model. Each phase in spiral model begins with a design goal and ends with the client reviewing the progress
+            </li>
             <li>Pros:
                 <ol>
                     <li>Changing requirements can be accommodated</li>

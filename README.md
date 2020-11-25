@@ -4,8 +4,21 @@
 <ol>
     <li><strong>Agile</strong></li>
         <ul>
-            <li>Pros:</li>
-            <li>Cons:</li>
+            <li>The agile methodology is a iterative design process that builds software incrementally. It helps teams deliver value to their customers faster.</li>
+            <li>
+                Pros:
+                <ol>
+                    <li>Responsive to changes as new features can be developed in the upcoming sprint</li>
+                    <li>Working product after first few sprints</li>
+                </ol>
+            </li>
+            <li>
+                Cons:
+                <ol>
+                    <li>There is no clear picture of the final product</li>
+                    <li>Requires adaptable skilled developers</li>
+                </ol>
+            </li>
         </ul>
     <li><strong>Waterfall</strong></li>
         <ul>

@@ -50,10 +50,22 @@
             </li>
             </br>
         </ul>
-    <li><strong>Placeholder</strong></li>
+    <li><strong>Spiral</strong></li>
         <ul>
-            <li>Pros:</li>
-            <li>Cons:</li>
+            <li>Pros:
+                <ol>
+                    <li>Changing requirements can be accommodated</li>
+                    <li>Users see the system early</li>
+                    <li>Development can be divided into smaller parts and the risky parts can be developed earlier which helps in better risk management</li>
+                </ol>
+            </li>
+            <li>Cons:
+                <ol>
+                    <li>Management is more complex</li>
+                    <li>Large number of intermediate stages requires excessive documentation</li>
+                    <li>Not suitable for small or low risk projects and could be expensive for small projects</li>
+                </ol>
+            </li>
         </ul>
     <li><strong>Placeholder</strong></li>
         <ul>

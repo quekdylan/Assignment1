@@ -4,7 +4,7 @@
 <ol>
     <li><strong>Agile</strong></li>
         <ul>
-            <li>The agile methodology is a iterative design process that builds software incrementally. It helps teams deliver value to their customers faster.</li>
+            <li>The agile methodology is a iterative design process that builds software incrementally. It helps teams deliver value to their customers faster.</li></br>
             <li>
                 Pros:
                 <ol>
@@ -12,6 +12,7 @@
                     <li>Working product after first few sprints</li>
                 </ol>
             </li>
+    </br>
             <li>
                 Cons:
                 <ol>
@@ -19,6 +20,7 @@
                     <li>Requires adaptable skilled developers</li>
                 </ol>
             </li>
+            </br>
         </ul>
     <li><strong>Waterfall</strong></li>
         <ul>
@@ -74,7 +76,7 @@
         <ul>
             <li>
                 Rapid Application Development is a development model that prioritizes rapid prototyping and receiving quick feedback based on the prototype and it has a drawn out development and testing cycle. Developers are able to make multiple iterations and updates to a software rapidly without having to start a development schedule with scratch each time.
-            </li>
+            </li></br>
             <li>Pros:
                 <ol>
                     <li>Requirements can be changed at any time</li>
@@ -82,6 +84,7 @@
                     <li>Higher customer satisfication, customer more confident as there's prototypes</li>
                 </ol>
             </li>
+            </br>
             <li>Cons:
                 <ol>
                     <li>Needs highly skilled developers</li>
@@ -89,12 +92,14 @@
                     <li>More complex to manage compared to other models</li>
                 </ol>
             </li>
+            </br>
             <li>When should you use RAD? 
                 <ol>
                     <li>When you can reliably test your prototypes</li>
                     <li>When you need a project done quickly</li>
                 </ol>
             </li>
+            </br>
         </ul>
 </ol>    
 

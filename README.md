@@ -1,6 +1,19 @@
 # Assignment 1
+<strong>RatVenture</strong>
+<p>
+    RatVenture is a computer role-playing game where the player is the hero. The world is being invaded by the Rat King and his endless rat minions. The only way to defeat the Rat King is to find the Orb of Power located in the faraway land of Katalina. 
+    In this computer role-playing game, the player will travel around a grid map searching for the Orb of Power and fighting rat minions. Once the player finds the Orb of Power, the Rat King loses. 
+</p>
 
-<strong>Software Development Methodologies:</strong>
+<strong>Roles:</strong>
+<ol>
+    <li>Scrum Master: Zhen Cheng</li>
+    <li>QA: Jia Jun</li>
+    <li>Developer: Dylan</li>
+    <li>Developer: Dong Han</li>
+</ol>
+
+<strong>Software Development Methodologies Considered:</strong>
 <ol>
     <li><strong>Agile</strong></li>
         <ul>
@@ -17,7 +30,15 @@
                 Cons:
                 <ol>
                     <li>There is no clear picture of the final product</li>
+                    <li>Minimum documentation is given</li>
                     <li>Requires adaptable skilled developers</li>
+                </ol>
+            </li>
+            </br>
+            <li>When should you use agile? 
+                <ol>
+                    <li>If there is a need to implement new features along the way.</li>
+                    <li>When the owner wants a working product as soon as possible.</li>
                 </ol>
             </li>
             </br>
@@ -71,13 +92,6 @@
                     <li>Not suitable for small or low risk projects and could be expensive for small projects</li>
                 </ol>
             </li>
-            <li>When it gets used:
-                <ol>
-                    <li>For medium to high-risk projects</li>
-                    <li>When project is large</li>
-                    <li>When changes may require at any time</li>
-                </ol>
-            </li>
         </ul>
         </br>
     <li><strong>Rapid Application Development (RAD)</strong></li>
@@ -112,4 +126,6 @@
 </ol>    
 
 <strong>Summary</strong></br>    
-Why we picked Agile:
+Why we picked Agile: 
+We chose agile as the requirements might change over time. Hence, new features can easily be added in upcoming sprints.
+We also chose scrum as the agile framework since we have some experience with it and it can be incorporated with devops.

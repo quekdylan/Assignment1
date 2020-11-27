@@ -92,6 +92,13 @@
                     <li>Not suitable for small or low risk projects and could be expensive for small projects</li>
                 </ol>
             </li>
+            <li>When it gets used:
+                <ol>
+                    <li>For medium to high-risk projects</li>
+                    <li>When project is large</li>
+                    <li>When changes may require at any time</li>
+                </ol>
+            </li>
         </ul>
         </br>
     <li><strong>Rapid Application Development (RAD)</strong></li>

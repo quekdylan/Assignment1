@@ -70,10 +70,31 @@
                 </ol>
             </li>
         </ul>
-    <li><strong>Placeholder</strong></li>
+    <li><strong>Rapid Application Development (RAD)</strong></li>
         <ul>
-            <li>Pros:</li>
-            <li>Cons:</li>
+            <li>
+                Rapid Application Development is a development model that prioritizes rapid prototyping and receiving quick feedback based on the prototype and it has a drawn out development and testing cycle. Developers are able to make multiple iterations and updates to a software rapidly without having to start a development schedule with scratch each time.
+            </li>
+            <li>Pros:
+                <ol>
+                    <li>Requirements can be changed at any time</li>
+                    <li>Feedbacks and reviews are quick</li>
+                    <li>Higher customer satisfication, customer more confident as there's prototypes</li>
+                </ol>
+            </li>
+            <li>Cons:
+                <ol>
+                    <li>Needs highly skilled developers</li>
+                    <li>Needs strong team collaboration</li>
+                    <li>More complex to manage compared to other models</li>
+                </ol>
+            </li>
+            <li>When should you use RAD? 
+                <ol>
+                    <li>When you can reliably test your prototypes</li>
+                    <li>When you need a project done quickly</li>
+                </ol>
+            </li>
         </ul>
 </ol>    
 

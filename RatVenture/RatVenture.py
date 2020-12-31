@@ -1,4 +1,5 @@
 from RatVenture_functions import *
+from RatVenture_classes import *
 import sys
 
 #Default values
@@ -21,7 +22,7 @@ while(True):
 
     elif(option == 2):
         v_hp, v_location, v_day = resumeGame(v_filename)
-        break;
+        break
 
     elif(option == 3):
         print("The game will now exit.")

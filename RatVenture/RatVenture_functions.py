@@ -1,4 +1,5 @@
 import sys
+from RatVenture_classes import *
 
 def mainMenu():
     #This function prints out the main menu
@@ -30,6 +31,17 @@ def resumeGame(filename):
         hp, location, day = 20, "0,0", 1
     return(hp, location, day)
 
+def exitGame(exit):
+    # This function exits the game
+    # Input: -
+    # Output: 
+
+    try:
+        sys.exit()
+
+    except:
+        print("Exit has failed.")
+
 
 def townMenu():
     print("a")
@@ -50,3 +62,4 @@ def checkEncounter():
     #This function checks whether if the player encounters a monster
     #Input: ?
     #Output: True if encounters monster, false if not
+    print("a")

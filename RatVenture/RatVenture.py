@@ -5,10 +5,6 @@ import sys
 #Default values
 v_filename = "save.txt"
 
-v_name = "The Hero"
-v_damage = "2-4"
-v_defence = 1
-v_hp = 20
 v_location="0,0"
 v_day = 1
 

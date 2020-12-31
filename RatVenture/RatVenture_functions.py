@@ -1,7 +1,10 @@
 import sys
+from RatVenture_classes import *
 
 def mainMenu():
-    #This function 
+    #This function prints out the main menu
+    #Input: -
+    #Output: -
     print("Welcome to Ratventure!")
     print("----------------------")
     print("1) New Game")
@@ -9,7 +12,9 @@ def mainMenu():
     print("3) Exit Game")
 
 def newGame():
-
+    #This function...
+    #Input: -
+    #Output: -
     print("Starting new game...")
 
 def resumeGame(filename):
@@ -26,6 +31,19 @@ def resumeGame(filename):
         hp, location, day = 20, "0,0", 1
     return(hp, location, day)
 
+
+def exitGame():
+    # This function exits the game
+    # Input: -
+    # Output: 
+
+    try:
+        sys.exit()
+
+    except:
+        print("Exit has failed.")
+
+
 def townMenu():
     print("a")
 
@@ -37,6 +55,12 @@ def outdoorMenu():
 
 def checkTown():
     #This function checks whether if the player is in town or not
-    #input: location
-    #returns: True if in town, False if not
+    #Input: location
+    #Returns: True if in town, False if not
+    print("a")
+
+def checkEncounter():
+    #This function checks whether if the player encounters a monster
+    #Input: ?
+    #Output: True if encounters monster, false if not
     print("a")

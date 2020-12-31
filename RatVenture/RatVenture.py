@@ -4,11 +4,6 @@ import sys
 
 #Default values
 v_filename = "save.txt"
-
-v_name = "The Hero"
-v_damage = "2-4"
-v_defence = 1
-v_hp = 20
 v_location="0,0"
 v_day = 1
 
@@ -17,7 +12,8 @@ while(True):
     mainMenu()
     option = int(input("Enter your option: "))
     if(option == 1):
-        newGame()
+        #Creates a new game using newGame() function and receives player object
+        player = newGame()
         break
 
     elif(option == 2):
@@ -26,7 +22,7 @@ while(True):
 
     elif(option == 3):
         print("The game will now exit.")
-        quit()
+        exitGame()
     else:
         print("Invalid option. Please enter again.")
 

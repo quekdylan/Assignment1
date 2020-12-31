@@ -31,7 +31,8 @@ def resumeGame(filename):
         hp, location, day = 20, "0,0", 1
     return(hp, location, day)
 
-def exitGame(exit):
+
+def exitGame():
     # This function exits the game
     # Input: -
     # Output: 

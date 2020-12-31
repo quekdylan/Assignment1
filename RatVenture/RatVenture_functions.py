@@ -12,10 +12,16 @@ def mainMenu():
     print("3) Exit Game")
 
 def newGame():
-    #This function...
+    #This function creates and return a player object with default stats
     #Input: -
-    #Output: -
+    #Output: "Starting new game..."
+    #           Player object(Name, Health, Damage, Defence)
+
     print("Starting new game...")
+
+    #init the player object
+    player = Entity("The Hero", 20, "2-4", 1)
+    return player
 
 def resumeGame(filename):
     # This function reads any previous save files and loads it

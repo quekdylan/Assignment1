@@ -17,7 +17,8 @@ while(True):
     mainMenu()
     option = int(input("Enter your option: "))
     if(option == 1):
-        newGame()
+        #Creates a new game using newGame() function and receives player object
+        player = newGame()
         break
 
     elif(option == 2):
@@ -26,7 +27,7 @@ while(True):
 
     elif(option == 3):
         print("The game will now exit.")
-        quit()
+        exitGame()
     else:
         print("Invalid option. Please enter again.")
 

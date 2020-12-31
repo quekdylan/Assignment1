@@ -12,7 +12,7 @@ v_location="0,0"
 v_day = 1
 
 #Display Main Menu 
-while(True)
+while(True):
     mainMenu()
     option = int(input("Enter your option: "))
     if(option == 1):

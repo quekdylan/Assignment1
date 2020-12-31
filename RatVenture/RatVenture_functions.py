@@ -1,7 +1,9 @@
 import sys
 
 def mainMenu():
-    #This function 
+    #This function prints out the main menu
+    #Input: -
+    #Output: -
     print("Welcome to Ratventure!")
     print("----------------------")
     print("1) New Game")
@@ -9,7 +11,9 @@ def mainMenu():
     print("3) Exit Game")
 
 def newGame():
-
+    #This function...
+    #Input: -
+    #Output: -
     print("Starting new game...")
 
 def resumeGame(filename):
@@ -38,6 +42,11 @@ def outdoorMenu():
 
 def checkTown():
     #This function checks whether if the player is in town or not
-    #input: location
-    #returns: True if in town, False if not
+    #Input: location
+    #Returns: True if in town, False if not
     print("a")
+
+def checkEncounter():
+    #This function checks whether if the player encounters a monster
+    #Input: ?
+    #Output: True if encounters monster, false if not

@@ -26,7 +26,6 @@ def resumeGame(filename):
         hp, location, day = 20, "0,0", 1
     return(hp, location, day)
 
-
 def townMenu():
     print("a")
 

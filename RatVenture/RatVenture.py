@@ -4,7 +4,6 @@ import sys
 
 #Default values
 v_filename = "save.txt"
-
 v_location="0,0"
 v_day = 1
 

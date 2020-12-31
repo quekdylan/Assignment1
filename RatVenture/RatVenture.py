@@ -33,7 +33,7 @@ while(True):
     
 while(True):
     if(checkTown() == True):
-        townMenu()
+        townMenu(v_day)
         choice = int(input("Enter your choice: "))
     elif(checkEncounter() == True):
         combatMenu()

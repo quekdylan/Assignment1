@@ -54,7 +54,7 @@ def outdoorMenu():
 
 def checkTown():
     #This function checks whether if the player is in town or not
-    #Input: location
+    #Input: location: Current location of player
     #Returns: True if in town, False if not
     print("a")
 

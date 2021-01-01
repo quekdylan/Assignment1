@@ -29,7 +29,7 @@ while(True):
     
 while(True):
     if(checkLocation(v_location) == "a town"):
-        townMenu()
+        townMenu(v_day)
         choice = int(input("Enter your choice: "))
         if(choice == 1):
             viewCharacter()

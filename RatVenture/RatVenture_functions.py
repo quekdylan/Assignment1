@@ -1,5 +1,9 @@
 import sys
+import os
+import re
+from pathlib import Path
 from RatVenture_classes import *
+
 
 def mainMenu():
     #This function prints out the main menu
@@ -51,8 +55,54 @@ def exitGame():
         print("Exit has failed.")
 
 
-def townMenu():
-    print("a")
+def townMenu(v_day):
+    # This function prints out the town menu
+    # Input: v_day: Contains the value of the current day
+    # Output: -
+
+    f"Day {v_day}. You are in a town."
+    print("1) View Character")
+    print("2) View Map")
+    print("3) Move")
+    print("4) Rest")
+    print("5) Save Game")
+    print("6) Exit Game")
+
+def viewCharacter(name, health, damage, defence):
+    # This function displays the player's statistics
+    # Input: name, health, damage, defence
+    # Output: -
+
+    print(name)
+    f" Damage: {damage}"
+    f"Defence: {defence}"
+    f"    HP : {health}"
+
+def rest(day, health):
+    # This function restores the player's health to 20, and add 1 to day.
+    # Input: Day, Health
+    # Output: Day, Health
+
+    day = day + 1
+    health = 20
+
+    print("You are fully healed.")    
+
+    return day, health
+
+def saveGame(health, location, day, full_path=None):
+
+    #Path of current working directory
+    #path = os.getcwd()
+    if(full_path == None):
+        full_path = (os.getcwd() + "\\" + "RatVenture" + "\\" + "save.txt")
+
+    #Full path of savefile
+    #full_path = (path + "\\" + "RatVenture" + "\\" +fileName)
+
+    f = open(full_path, "w+")
+    for s in [str(health), '\n', str(location), '\n', str(day)]:
+        f.write(s)
 
 def viewMap(location):
     # This function produces a map with the player's current location
@@ -128,7 +178,7 @@ def outdoorMenu():
 
 def checkTown():
     #This function checks whether if the player is in town or not
-    #Input: location
+    #Input: location: Current location of player
     #Returns: True if in town, False if not
     print("a")
 

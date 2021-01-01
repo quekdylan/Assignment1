@@ -55,5 +55,5 @@ jobs:
       if: github.event_name == 'pull_request' && github.event.action == 'opened'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/zhencheng123/Assignment1/projects/1
+        GITHUB_PROJECT_URL: https://github.com/zhencheng123/Assignment1/projects/2
         GITHUB_PROJECT_COLUMN_NAME: To do

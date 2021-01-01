@@ -30,12 +30,13 @@ def resumeGame(filename):
     try:
         with open(filename, 'r') as f:
             data = f.read().split('\n')
-            hp, location, day = int(data[0]), data[1], int(data[2])
+            player = Entity("The Hero", int(data[0]), "2-4", 1)
+            location, day = data[1], int(data[2])
             print("Save file found. Resuming game...")
     except IOError:
-        print("Save file not found. ")
-        hp, location, day = 20, "0,0", 1
-    return(hp, location, day)
+        print("Save file not found.")
+        player, location, day = newGame(), "0,0", 1
+    return(player, location, day)
 
 
 def exitGame():
@@ -52,6 +53,72 @@ def exitGame():
 
 def townMenu():
     print("a")
+
+def viewMap(location):
+    # This function produces a map with the player's current location
+    # Input: Player's coordinates
+    # Output: Map (string)
+    output = ""
+    townCoordinates = ["0,0", "3,1", "5,2", "1,3", "4,6"]
+    for y in range(17):
+        if(y%2 == 0):
+            output += ("+---+---+---+---+---+---+---+---+")
+        else:
+            for x in range(8):
+                pointer = str(x) + "," + str(int((y-1)/2))
+                if(pointer == location):
+                    if(pointer in townCoordinates):
+                        output+= "|H/T"
+                    else:
+                        output+= "| H "
+                elif(pointer in townCoordinates):
+                    output+= "| T "
+                elif(pointer == "7,7"):
+                    output+= "| K "
+                else:
+                    output += "|   "
+            output += "|"
+        output += "\n"
+    return(output)
+
+def move(location, direction, day):
+    # This function updates the player location based on the direction, and adds a day 
+    # Input: Player coordinates, direction, current day
+    # Output: Updated location and day
+    coordinates = list(map(int, location.split(",")))
+    if(direction == "w" or direction == "W"):
+        coordinates[1] -= 1
+    elif(direction == "a" or direction == "A"):
+        coordinates[0] -= 1
+    elif(direction == "s" or direction == "S"):
+        coordinates[1] += 1
+    elif(direction == "d" or direction == "D"):
+        coordinates[0] += 1
+    else:
+        print("Invalid input, please try again.")
+        return(0)
+    if(coordinates[0] >= 0 and coordinates[0] <= 7 and coordinates[1] >= 0 and coordinates[1] <= 7):
+        updatedLocation = ','.join(map(str, coordinates))
+        updatedDay = day + 1
+        return(updatedLocation, updatedDay)
+    else:
+        print("Out of bounds, please try again.")
+        return(0)
+
+def checkLocation(coordinates):
+    # This function checks if the player is in a town, outdoors or at the orb of power
+    # Input: Player coordinates
+    # Output: Player location
+
+    townCoordinates = ["0,0", "3,1", "5,2", "1,3", "4,6"]
+    orbCoordinates = "7,7"
+
+    if (coordinates in townCoordinates):
+        return("a town")
+    elif (coordinates == orbCoordinates):
+        return("the orb")
+    else:
+        return("the open")
 
 def combatMenu():
     print("a")

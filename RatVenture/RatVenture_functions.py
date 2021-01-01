@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 from RatVenture_classes import *
 
+
 def mainMenu():
     #This function prints out the main menu
     #Input: -
@@ -88,18 +89,19 @@ def rest(day, health):
 
     return day, health
 
-def saveGame(health, location, day, fileName="save.txt"):
+def saveGame(health, location, day, full_path=None):
 
     #Path of current working directory
-    path = os.getcwd()
-    
+    #path = os.getcwd()
+    if(full_path == None):
+        full_path = (os.getcwd() + "\\" + "RatVenture" + "\\" + "save.txt")
+
     #Full path of savefile
-    full_path = (path + "\\" + "RatVenture" + "\\" +fileName)
+    #full_path = (path + "\\" + "RatVenture" + "\\" +fileName)
 
-    with open(full_path, 'w') as f:
-        for s in [str(health), '\n', str(location), '\n', str(day)]:
-            f.write(s)
-
+    f = open(full_path, "w+")
+    for s in [str(health), '\n', str(location), '\n', str(day)]:
+        f.write(s)
 
 def combatMenu():
     print("a")

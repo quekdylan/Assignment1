@@ -14,7 +14,11 @@ def test_combat():
                    
 #check new HP
 #if <=0
-
+@pytest.mark.parametrize("player.health",[(1)]
+def testdeath():
+    attack(player, enemy)
+    assert 
+    
 #check if game over screen?
 
 #if NOT 0

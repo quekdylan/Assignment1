@@ -3,11 +3,16 @@ from RatVenture_functions import *
 from RatVenture_classes import *
 
 ##attack##
-
+def test_combat():
 #check initial player and enemy HP
+    phealth = player.health
+    ehealth = enemy.health
 
+    attack(player, enemy)
+    assert player.health < phealth
+    assert enemy.health < ehealth
+                   
 #check new HP
-
 #if <=0
 
 #check if game over screen?
@@ -23,12 +28,6 @@ from RatVenture_classes import *
 #else check if both player and enemy HP went down
 
 #check if it is using outdoor menu
-
-@pytest.mark.parameterize("hp",[(20)])
-
-    def test_combat("hp, resultHP"):
-        valueHP = fight(hp)
-        assert valueHP > resultHP
     
 ##run##
 

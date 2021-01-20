@@ -20,3 +20,4 @@ class Entity:
 # Example of how to update variable in class
 # player.health = (player.health - 1)
 # print(player.health)
+

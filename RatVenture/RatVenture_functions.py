@@ -3,6 +3,7 @@ import os
 import re
 from pathlib import Path
 from RatVenture_classes import *
+import random
 
 
 def mainMenu():
@@ -21,7 +22,7 @@ def newGame():
     #Output: "Starting new game..."
     #           Player object(Name, Health, Damage, Defence)
 
-    print("Starting new game...")
+    print("Starting new game...\n")
 
     #init the player object
     player = Entity("The Hero", 20, "2-4", 1)
@@ -60,7 +61,7 @@ def townMenu(v_day):
     # Input: v_day: Contains the value of the current day
     # Output: -
 
-    f"Day {v_day}. You are in a town."
+    f"\nDay {v_day}. You are in a town."
     print("1) View Character")
     print("2) View Map")
     print("3) Move")
@@ -68,15 +69,15 @@ def townMenu(v_day):
     print("5) Save Game")
     print("6) Exit Game")
 
-def viewCharacter(name, health, damage, defence):
+def viewCharacter(player):
     # This function displays the player's statistics
-    # Input: name, health, damage, defence
+    # Input: player object
     # Output: -
 
-    print(name)
-    f" Damage: {damage}"
-    f"Defence: {defence}"
-    f"    HP : {health}"
+    print(player.name)
+    f" Damage: {player.damage}"
+    f"Defence: {player.defence}"
+    f"    HP : {player.health}"
 
 def rest(day, health):
     # This function restores the player's health to 20, and add 1 to day.
@@ -95,7 +96,8 @@ def saveGame(health, location, day, full_path=None):
     #Path of current working directory
     #path = os.getcwd()
     if(full_path == None):
-        full_path = (os.getcwd() + "\\" + "RatVenture" + "\\" + "save.txt")
+        full_path = (os.path.dirname(__file__)  + "\\" + "save.txt")
+        print(full_path)
 
     #Full path of savefile
     #full_path = (path + "\\" + "RatVenture" + "\\" +fileName)
@@ -170,20 +172,19 @@ def checkLocation(coordinates):
     else:
         return("the open")
 
-def combatMenu():
-    print("a")
+def combatMenu(enemy):
+    print("\nEncounter! - " + enemy.name)
+    print("Damage: " + enemy.damage)
+    print("Defence: " + str(enemy.defence))
+    print("HP: " + str(enemy.health)) 
+    print("1) Attack\n2) Run")
+    
 
 def outdoorMenu():
-    print("a")
+    print("\n1) View Character")
+    print("2) View Map")
+    print("3) Move")
+    print("4) Exit Game")
 
-def checkTown():
-    #This function checks whether if the player is in town or not
-    #Input: location: Current location of player
-    #Returns: True if in town, False if not
-    print("a")
-
-def checkEncounter():
-    #This function checks whether if the player encounters a monster
-    #Input: ?
-    #Output: True if encounters monster, false if not
-    print("a")
+def run():
+    print("You run and hide")

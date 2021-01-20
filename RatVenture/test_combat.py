@@ -2,39 +2,34 @@ import pytest
 from RatVenture_functions import *
 from RatVenture_classes import *
 
+
 ##attack##
+#@pytest.mark.parametrize("player, enemy",[(p,r)])
 def test_combat():
 #check initial player and enemy HP
+    player = Entity("The Hero", 20, "2-4", 1)
+    enemy = Entity('Rat', 10, '1-3', 1)
     phealth = player.health
-    ehealth = enemy.health
+    ehealth = enemy.health  
 
-    attack(player, enemy)
-    assert player.health < phealth
+    player, enemy, status = attack(player, enemy)
+    assert player.health <= phealth
     assert enemy.health < ehealth
                    
-#check new HP
-#if <=0
-@pytest.mark.parametrize("player.health",[(1)]
-def testdeath():
-    attack(player, enemy)
-    assert 
+
+#check if player wins
+#@pytest.mark.parametrize("player, enemy",[Entity("The Hero", 20, "2-4", 1), Entity('Rat', 1, '1-3', 1)])
+def testWin():
+    player = Entity("The Hero", 20, "2-4", 1)
+    enemy = Entity('Rat', 1, '1-3', 1)
+    player, enemy, status = attack(player, enemy)
+    assert status == 0
     
-#check if game over screen?
-
-#if NOT 0
-
-#check enemy HP
-
-#if enemy HP <=0
-
-#return to map
-
-#else check if both player and enemy HP went down
-
-#check if it is using outdoor menu
     
-##run##
-
-#check if enemy instance HP went back to full
-
-#check if outdoor menu is selected
+#check if player loses
+#@pytest.mark.parametrize("player, enemy",[Entity("The Hero", 1, "2-4", 0), Entity('Rat', 10, '1-3', 1)])
+def testLose():
+    player = Entity("The Hero", 1, "2-4", 0)
+    enemy = Entity('Rat', 10, '1-3', 1)
+    player, enemy, status = attack(player, enemy)
+    assert status == 1

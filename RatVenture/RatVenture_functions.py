@@ -1,6 +1,7 @@
 import sys
 import os
 import re
+import random
 from pathlib import Path
 from RatVenture_classes import *
 
@@ -60,7 +61,7 @@ def townMenu(v_day):
     # Input: v_day: Contains the value of the current day
     # Output: -
 
-    f"Day {v_day}. You are in a town."
+    print(f"Day {v_day}. You are in a town.")
     print("1) View Character")
     print("2) View Map")
     print("3) Move")
@@ -74,9 +75,9 @@ def viewCharacter(name, health, damage, defence):
     # Output: -
 
     print(name)
-    f" Damage: {damage}"
-    f"Defence: {defence}"
-    f"    HP : {health}"
+    print(f" Damage: {damage}")
+    print(f"Defence: {defence}")
+    print(f"    HP : {health}")
 
 def rest(day, health):
     # This function restores the player's health to 20, and add 1 to day.
@@ -91,6 +92,11 @@ def rest(day, health):
     return day, health
 
 def saveGame(health, location, day, full_path=None):
+    # This function saves the game
+    # Input: health: players' health
+    #        location: current location of player
+    #        day: current day
+    # Output: filename.txt
 
     #Path of current working directory
     #path = os.getcwd()
@@ -173,6 +179,38 @@ def checkLocation(coordinates):
 def combatMenu():
     print("a")
 
+def attack(player, enemy):
+    # This function is responsible for the attack mechanics in the game
+    # Input: Player object, enemy object
+    # Output: Player object, enemy object, status
+    #status 0 = Player wins
+    #status 1 = Player loses
+    #status 2 = Battle continues
+
+    #Calculate player damage using player damage range - enemy defence
+    playerDamage = pickRandomNumber(player.damage) - enemy.defence
+    enemy.health = enemy.health - playerDamage
+    print(f"You deal {playerDamage} damage to the {enemy.name}")
+    #checks if enemy health is less than 0
+    if(enemy.health <= 0):
+        status = 0
+    
+    #if enemy health more than 0, battle continues
+    else:
+        #Calculate enemy damage using enemy damage range - player defence
+        enemyDamage = pickRandomNumber(enemy.damage) - player.defence
+        player.health = player.health - enemyDamage
+        print(f"Ouch! The {enemy.name} hit you for {enemyDamage} damage!")
+        print(f"You have {player.health} HP left.")
+        #checks if player health is less than 0 
+        if (player.health <= 0):
+            status = 1
+    
+    # If player health and enemy health both above 0, battle continues
+    if(enemy.health > 0 and player.health > 0):
+        status = 2
+    return player, enemy, status
+
 def outdoorMenu():
     print("a")
 
@@ -187,3 +225,13 @@ def checkEncounter():
     #Input: ?
     #Output: True if encounters monster, false if not
     print("a")
+
+def pickRandomNumber(damage):
+
+    #"2-4" - Removes the dash and adds the digit into list1
+    list1 = [int(s) for s in damage.split("-") if s.isdigit()]
+    #use range() to create a list of numbers using the 2 values in list1
+    damageList = list(range(list1[0],list1[1]+1))
+    #use random to pick a random number from damageList
+    number = random.choice(damageList)
+    return number

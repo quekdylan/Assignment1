@@ -238,3 +238,6 @@ def outdoorMenu():
 
 def run():
     print("You run and hide")
+
+def checkKillable():
+    

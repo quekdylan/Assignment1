@@ -10,7 +10,8 @@ class Entity:
     def __init__(self, name, health, damage, defence):
         """
         description: This function creates the entity object
-        @param docstring the docstring to parse data from
+        @param name The name of the entity
+        @param health The health of the entity
         """
         self.name = name
         self.health = health

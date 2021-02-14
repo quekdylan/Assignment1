@@ -11,7 +11,7 @@ class Entity:
         """
         description: This function creates the entity object
         params: list of arguments in the form 
-        {name:self.name, description: hello}
+        {name:self.name, description: hello, default: <''>}
         """
         self.name = name
         self.health = health

@@ -5,12 +5,13 @@ class Entity:
     This is a class of entities e.g.(Player, Rat) \n
     Input: Name, Health, Damage, Defence \n
     Output:  Creates a object
+    @author Dong Han
     """
 
     def __init__(self, name, health, damage, defence):
         """
         description: This function creates the entity object
-        @param name The name of the entity
+        @param name The name of the entity, test
         @param health The health of the entity
         """
         self.name = name

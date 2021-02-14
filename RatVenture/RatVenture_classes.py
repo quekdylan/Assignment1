@@ -8,6 +8,12 @@ class Entity:
     '''
 
     def __init__(self, name, health, damage, defence):
+        '''
+        self.name = Name of entity
+        self.health = Health of entity
+        self.damage = Damage of entity
+        self.defence = Defence of entity
+        '''
         self.name = name
         self.health = health
         self.damage = damage

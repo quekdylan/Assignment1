@@ -1,9 +1,11 @@
 #This script contains the classes in RatVenture
 
 class Entity:
-    # This is a class of entities e.g.(Player, Rat)
-    # Input: Name, Health, Damage, Defence
-    # Output:  Creates a object
+    '''
+    This is a class of entities e.g.(Player, Rat)
+    Input: Name, Health, Damage, Defence
+    Output:  Creates a object
+    '''
 
     def __init__(self, name, health, damage, defence):
         self.name = name

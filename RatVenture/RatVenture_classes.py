@@ -2,8 +2,8 @@
 
 class Entity:
     """
-    This is a class of entities e.g.(Player, Rat)
-    Input: Name, Health, Damage, Defence
+    This is a class of entities e.g.(Player, Rat) \n
+    Input: Name, Health, Damage, Defence \n
     Output:  Creates a object
     """
 

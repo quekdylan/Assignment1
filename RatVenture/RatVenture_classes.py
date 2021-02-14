@@ -9,7 +9,10 @@ class Entity:
 
     def __init__(self, name, health, damage, defence):
         '''
-        self.name = Name of entity
+        name: init
+        description: This function creates the entity object
+        params: {name:name, description: Name of entity, default: <defaultvalue or ''>}
+        param name : Name of entity
         self.health = Health of entity
         self.damage = Damage of entity
         self.defence = Defence of entity

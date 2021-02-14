@@ -10,9 +10,12 @@ class Entity:
 
     def __init__(self, name, health, damage, defence):
         """
-        description: This function creates the entity object
+        This function creates the entity object
         @param name The name of the entity, test
         @param health The health of the entity
+        @param damage The damage of the entity, test
+        @param defence The defence of the entity
+        @param self -
         """
         self.name = name
         self.health = health

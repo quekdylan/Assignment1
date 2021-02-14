@@ -187,13 +187,14 @@ def combatMenu(enemy):
     
 
 def attack(player, enemy):
-    # This function is responsible for the attack mechanics in the game
-    # Input: Player object, enemy object
-    # Output: Player object, enemy object, status
-    #status 0 = Player wins
-    #status 1 = Player loses
-    #status 2 = Battle continues
-
+'''
+    This function is responsible for the attack mechanics in the game
+    Input: Player object, enemy object
+    Output: Player object, enemy object, status
+    status 0 = Player wins
+    status 1 = Player loses
+    status 2 = Battle continues
+'''
     #Calculate player damage using player damage range - enemy defence
     playerDamage = pickRandomNumber(player.damage) - enemy.defence
     enemy.health = enemy.health - playerDamage

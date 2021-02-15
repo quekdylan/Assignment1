@@ -15,6 +15,8 @@ class Entity:
     print(player.health) \n
     
     @author Dong Han
+    
+    @return Entity object
     """
     def __init__(self, name, health, damage, defence):
         """

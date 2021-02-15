@@ -25,7 +25,6 @@ class Entity:
         @param defence The defence of the entity (int)
         @param orb True if the entity is holding the Orb (bool)
         @param self -
-        @return Entity object
         """
         self.name = name
         self.health = health

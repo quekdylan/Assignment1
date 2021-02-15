@@ -28,13 +28,15 @@ def newGame():
     print("Starting new game...\n")
 
     #init the player object
-    player = Entity("The Hero", 20, "2-4", 1)
+    player = Entity("The Hero", 20, "2-4", 1,)
     return player
 
 def resumeGame(filename):
-    # This function reads any previous save files and loads it
-    # Input: save file name
-    # Output: hp, location, day
+    """
+    This function reads any previous save files and loads it
+    @param filename The name of the save file
+    @author Dylan
+    """
     try:
         with open(filename, 'r') as f:
             data = f.read().split('\n')
@@ -124,12 +126,16 @@ def saveGame(health, location, day, full_path=None):
     for s in [str(health), '\n', str(location), '\n', str(day)]:
         f.write(s)
 
-def viewMap(location):
-    # This function produces a map with the player's current location
-    # Input: Player's coordinates
-    # Output: Map (string)
+def viewMap(location, townCoordinates, orb_location, orb_found):
+    """
+    This function produces a map with the player's current location
+    @param location Player's current location
+    @param townCoordinates List of coordinates of towns
+    @param orb_location Coordinates of orb
+    @param orb_found Boolean if orb is found
+    @author Dylan
+    """
     output = ""
-    townCoordinates = ["0,0", "3,1", "5,2", "1,3", "4,6"]
     for y in range(17):
         if(y%2 == 0):
             output += ("+---+---+---+---+---+---+---+---+")
@@ -142,7 +148,10 @@ def viewMap(location):
                     else:
                         output+= "| H "
                 elif(pointer in townCoordinates):
-                    output+= "| T "
+                    if(not orb_found and pointer == orb_location):
+                        output+= "|T/O"
+                    else:
+                        output+= "| T "
                 elif(pointer == "7,7"):
                     output+= "| K "
                 else:
@@ -152,6 +161,13 @@ def viewMap(location):
     return(output)
 
 def move(location, direction, day):
+    """
+    This function updates the player location based on the direction, and adds a day 
+    @param location Player's current location
+    @param direction Input Direction (W,A,S,D)
+    @param day Current day
+    @author Dylan
+    """
     # This function updates the player location based on the direction, and adds a day 
     # Input: Player coordinates, direction, current day
     # Output: Updated location and day
@@ -175,12 +191,14 @@ def move(location, direction, day):
         print("Out of bounds, please try again.")
         return(0)
 
-def checkLocation(coordinates):
-    # This function checks if the player is in a town, outdoors or at the orb of power
-    # Input: Player coordinates
-    # Output: Player location
-
-    townCoordinates = ["0,0", "3,1", "5,2", "1,3", "4,6"]
+def checkLocation(coordinates, townCoordinates):
+    """
+    This function checks if the player is in a town, outdoors, at the orb of power or rat king
+    @param coordinates Player's current location
+    @param townCoordinates List of town coordinates
+    @author Dylan, Dong Han
+    """
+    
     kingCoordinates = "7,7"
 
     if (coordinates in townCoordinates):
@@ -191,6 +209,11 @@ def checkLocation(coordinates):
         return("You are in the open")
 
 def combatMenu(enemy):
+    """
+    This function displays the combat menu
+    @param enemy Enemy object (Entity class)
+    @author Dylan
+    """
     print("\nEncounter! - " + enemy.name)
     print("Damage: " + enemy.damage)
     print("Defence: " + str(enemy.defence))
@@ -273,6 +296,10 @@ def pickRandomNumber(damage):
 
 
 def outdoorMenu():
+    """
+    This function displays the outdoor menu
+    @author Dylan
+    """
     print("\n1) View Character")
     print("2) View Map")
     print("3) Move")
@@ -302,3 +329,36 @@ def checkKillable(enemy, orb):
         return 1
 
     
+    """
+    This function displays a message when the player runs
+    @author Dylan
+    """
+    print("You run and hide")
+
+def setOrbLocation(town_locations):
+    """
+    This function sets a location for the orb, that will be in a town that is not the starting town.
+    @param town_locations List of town locations
+    @author Dylan
+    """
+    locations = []
+    for location in town_locations:
+        if(location != "0,0"):
+            locations.append(location)
+    if locations == []:
+        return NULL
+    orb_location = random.choice(locations)
+    return orb_location
+
+def pickOrb(player):
+    damage = player.damage.split('-')
+    min_dmg = int(damage[0]) + 5
+    max_dmg = int(damage[1]) + 5
+    new_damage = str(min_dmg) + "-" + str(max_dmg)
+    new_defence = player.defence + 5
+    new_player = Entity("The Hero", player.health, new_damage, new_defence, True)
+
+    print('You found the orb of power!')
+    print('Your attack increases by 5!')
+    print('Your defense increases by 5!')
+    return new_player

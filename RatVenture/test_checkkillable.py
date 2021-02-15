@@ -1,4 +1,4 @@
-#Unit Test Function for rest Function.
+#Unit Test Function for if the rat king is killable.
 import pytest
 from RatVenture_functions import *
 from RatVenture_classes import *

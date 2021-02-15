@@ -1,11 +1,17 @@
-#Unit Test Function for rest Function.
+#Unit Test Function for stats increase after obtaining the orb.
 import pytest
 from RatVenture_functions import *
+from RatVenture_classes import *
 
+def test_checkstats():
+#check initial player and enemy HP
+    initialplayer = Entity("The Hero", 20, "2-4", 1)
+    player.pickorb()
+    assert player.orb = true
+    assert initialplayer.damage + 5
+    assert initialplayer.defence + 5
+    
 
-@pytest.mark.parametrize("hp,day,resultHp, resultDay",[(1,2,20,2), (3,10,20,4)])
-def test_rest(hp, day, resultHp, resultDay):
-    valueDay, valueHp =  rest(hp, day)
-    assert valueDay == resultDay and valueHp == resultHp
+    
 
-
+    

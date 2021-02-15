@@ -4,7 +4,7 @@ from RatVenture_classes import *
 
 
 def test_view_map_town():
-    map = viewMap("0,0")
+    map = viewMap("0,0",["0,0","3,1","5,2","1,3","4,6"],"3,1")
     assert map == """+---+---+---+---+---+---+---+---+
 |H/T|   |   |   |   |   |   |   |
 +---+---+---+---+---+---+---+---+
@@ -26,7 +26,7 @@ def test_view_map_town():
 
 
 def test_view_map_outdoors():
-    map = viewMap("4,0")
+    map = viewMap("4,0",["0,0","3,1","5,2","1,3","4,6"],"3,1"))
     assert map == """+---+---+---+---+---+---+---+---+
 | T |   |   |   | H |   |   |   |
 +---+---+---+---+---+---+---+---+

@@ -13,7 +13,7 @@ def test_checkkillable():
     ehealth = enemy.health
     
     player, enemy, status = attack(player, enemy, player.orb)
-    assert player.orb == true
+    assert player.orb == True
     assert enemy.health < ehealth
                    
 

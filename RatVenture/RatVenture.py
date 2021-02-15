@@ -35,7 +35,7 @@ while(True):
     # If player is in a town
     if(checkLocation(v_location, v_town_locations) == "You are in a town"):
         # If orb in town
-        if (v_location == v_orb_location):
+        if (v_location == v_orb_location and player.orb == False):
             player = pickOrb(player)
             
         townMenu(v_day)

@@ -109,7 +109,7 @@ def saveGame(health, location, day, full_path=None):
     @param health Players' health
     @param location Current location of player
     @param day Current day
-    @param fullpath Path of the saveFile
+    @param full_path Path of the saveFile
     @author Dong Han
     """
 
@@ -227,6 +227,7 @@ def attack(player, enemy, orb=False):
     Output: Player object, enemy object, status                         
     @param player The player object (Entity)
     @param enemy The enemy object (Entity)
+    @param orb The orb value of player (bool)
 
     @return player The updated player object (Entity)
     @return enemy The updated enemy object (Entity)
@@ -283,7 +284,7 @@ def attack(player, enemy, orb=False):
 def pickRandomNumber(damage):
     """
     This function picks a random number from a string of numbers. 
-    @param The damage values in string format. e.g.("2-5")
+    @param damage The damage values in string format. e.g.("2-5")
     @author Dong Han
     """
     #"2-4" - Removes the dash and adds the digit into list1

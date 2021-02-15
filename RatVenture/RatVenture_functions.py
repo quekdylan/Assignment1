@@ -23,12 +23,12 @@ def newGame():
     #This function creates and return a player object with default stats
     #Input: -
     #Output: "Starting new game..."
-    #           Player object(Name, Health, Damage, Defence)
+    #           Player object(Name, Health, Damage, Defence, Orb)
 
     print("Starting new game...\n")
 
     #init the player object
-    player = Entity("The Hero", 20, "2-4", 1,)
+    player = Entity("The Hero", 20, "2-4", 1)
     return player
 
 def resumeGame(filename):
@@ -252,7 +252,6 @@ def attack(player, enemy, orb=False):
             playerDamage = 0
         enemy.health = enemy.health - playerDamage
         print(f"You deal {playerDamage} damage to the {enemy.name}")
-        print(enemy.health)
     elif(killable == 0):
         # Rat king not killable
         print("Rat King has taken no damage! You need the orb of power!")

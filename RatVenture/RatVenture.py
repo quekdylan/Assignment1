@@ -9,6 +9,7 @@ v_day = 1
 v_rat_encounter = False
 v_town_locations = ["0,0", "3,1", "5,2", "1,3", "4,6"]
 v_orb_location = setOrbLocation(v_town_locations)
+v_rat_king_alive = True
 
 #Display Main Menu 
 while(True):
@@ -142,7 +143,7 @@ while(True):
 
     
     # Rat King encounter
-    elif(checkLocation(v_location) == "You see the Rat King!"):
+    elif(checkLocation(v_location, v_town_locations) == "You see the Rat King!" and v_rat_king_alive == True):
         enemy = Entity('Rat King', 25, '8-12', 5)
         in_combat = True
         while(in_combat):
@@ -157,6 +158,8 @@ while(True):
                 elif(status == 0):
                     print('The Rat King is dead! You are victorious!')
                     in_combat = False
+                    v_rat_king_alive = False
+                    exitGame()
                 elif(status == 1):
                     print('You died. Game over.')
                     exitGame()

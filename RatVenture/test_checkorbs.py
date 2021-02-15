@@ -3,14 +3,11 @@ from RatVenture_functions import *
 
 #checks if orb is NOT in original town
 def checkoriginalTown():
-    result = setOrbLocation("0,0")
-    assert result == null
+    result = setOrbLocation(["0,0"])
+    assert result == NULL
 
-#check orb location in towns
+#check that the orb will be set on places other than the starter town(0,0) even when 0,0 is an option
 def checkorb():
-    result1 = setOrbLocation("3,1")
-    result2 = setOrbLocation("5,2")
-    result3 = setOrbLocation("1,3")
-    result4 = setOrbLocation("4,6")
-
-    assert result1 = orb_location or result2 = orb_location or result3 = orb_location or result4 = orb_location
+    result = setOrbLocation(["0,0","1,3"])
+    assert result == "1,3"
+    

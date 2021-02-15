@@ -7,6 +7,8 @@ v_filename = "save.txt"
 v_location="0,0"
 v_day = 1
 v_rat_encounter = False
+v_town_locations = ["0,0", "3,1", "5,2", "1,3", "4,6"]
+v_orb_location = setOrbLocation(v_town_locations)
 
 #Display Main Menu 
 while(True):
@@ -30,7 +32,11 @@ while(True):
 #Main program    
 while(True):
     # If player is in a town
-    if(checkLocation(v_location) == "a town"):
+    if(checkLocation(v_location, v_town_locations) == "a town"):
+        # If orb in town
+        if (v_location == v_orb_location):
+            player = pickOrb(player)
+            
         townMenu(v_day)
         choice = int(input("Enter your choice: "))
         # View Character
@@ -40,19 +46,19 @@ while(True):
 
         # View Map
         elif(choice == 2):
-            print(viewMap(v_location))
+            print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
             continue
 
         # Move 
         elif(choice == 3):
             while(True):
-                print(viewMap(v_location))
+                print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
                 print("W = up; A = left; S = down; D = right")
                 direction = input("Your Move: ")
                 if(move(v_location, direction, v_day) != 0):
                     v_location, v_day = move(v_location, direction, v_day)
-                    print(viewMap(v_location))
-                    print("Day " + str(v_day) + ". You are in " + checkLocation(v_location))
+                    print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
+                    print("Day " + str(v_day) + ". You are in " + checkLocation(v_location, v_town_locations))
                     break
 
         # Rest
@@ -75,7 +81,7 @@ while(True):
             continue
     
     # Rat encounter
-    elif(checkLocation(v_location) == "the open" and v_rat_encounter == False):
+    elif(checkLocation(v_location, v_town_locations) == "the open" and v_rat_encounter == False):
         enemy = Entity('Rat', 10, '1-3', 1)
         in_combat = True
         while(in_combat):
@@ -107,22 +113,22 @@ while(True):
                     enemy = Entity('Rat', 10, '1-3', 1)
 
                 # View Map
-                elif(combatChoice == '2'):
-                    print(viewMap(v_location))
+                elif(outdoorChoice == '2'):
+                    print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
                     # Rat encounter (Health is reset)
                     enemy = Entity('Rat', 10, '1-3', 1)
 
                 # Move
-                elif(combatChoice == '3'):
+                elif(outdoorChoice == '3'):
                     in_combat = False
                     while(True):
-                        print(viewMap(v_location))
+                        print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
                         print("W = up; A = left; S = down; D = right")
                         direction = input("Your Move: ")
                         if(move(v_location, direction, v_day) != 0):
-                            v_location, v_day = move(v_location, direction, v_day)
-                            print(viewMap(v_location))
-                            print("Day " + str(v_day) + ". You are in " + checkLocation(v_location))
+                            v_loca1tion, v_day = move(v_location, direction, v_day)
+                            print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
+                            print("Day " + str(v_day) + ". You are in " + checkLocation(v_location, v_town_locations))
                             break
 
                 # Exit Game
@@ -135,7 +141,7 @@ while(True):
         continue
 
     # If player is in the open and has already encountered a rat
-    elif(checkLocation(v_location) == "the open"):
+    elif(checkLocation(v_location, v_town_locations) == "the open"):
         outdoorMenu()
         outdoorChoice = input("Enter choice: ")
 
@@ -145,18 +151,18 @@ while(True):
 
         # View Map
         elif(outdoorChoice == '2'):
-            print(viewMap(v_location))
+            print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
 
         # Move
         elif(outdoorChoice == '3'):
             while(True):
-                print(viewMap(v_location))
+                print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
                 print("W = up; A = left; S = down; D = right")
                 direction = input("Your Move: ")
                 if(move(v_location, direction, v_day) != 0):
                     v_location, v_day = move(v_location, direction, v_day)
-                    print(viewMap(v_location))
-                    print("Day " + str(v_day) + ". You are in " + checkLocation(v_location))
+                    print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
+                    print("Day " + str(v_day) + ". You are in " + checkLocation(v_location, v_town_locations))
                     break
 
         # Exit Game

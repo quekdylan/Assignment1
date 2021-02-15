@@ -2,8 +2,6 @@
 
 class Entity:
     """
-    @author Dong Han
-    
     This is a class of entities e.g.(Player, Rat, Rat King) \n
     Input: Name, Health, Damage, Defence, Orb=False \n
     Output:  Creates a object \n \n
@@ -15,6 +13,8 @@ class Entity:
     Example of how to update variable in class \n
     player.health = (player.health - 1) \n 
     print(player.health) \h
+    
+    @author Dong Han
     """
     def __init__(self, name, health, damage, defence):
         """

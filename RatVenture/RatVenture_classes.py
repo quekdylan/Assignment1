@@ -12,7 +12,7 @@ class Entity:
 
     Example of how to update variable in class \n
     player.health = (player.health - 1) \n 
-    print(player.health) \h
+    print(player.health) \n
     
     @author Dong Han
     """

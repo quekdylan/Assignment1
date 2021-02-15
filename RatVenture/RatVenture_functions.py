@@ -8,14 +8,16 @@ import random
 
 
 def mainMenu():
-    #This function prints out the main menu
-    #Input: -
-    #Output: -
+    """
+    This function prints out the main menu
+    @author Dong Han
+    """
     print("Welcome to Ratventure!")
     print("----------------------")
     print("1) New Game")
     print("2) Resume Game")
     print("3) Exit Game")
+    
 
 def newGame():
     #This function creates and return a player object with default stats
@@ -46,21 +48,22 @@ def resumeGame(filename):
 
 
 def exitGame():
-    # This function exits the game
-    # Input: -
-    # Output: 
+    """
+    This function exits the game
+    @author Dong Han
+    """
 
-    try:
-        sys.exit()
+    exit()
 
-    except:
-        print("Exit has failed.")
+    print("Exit has failed.")
 
 
 def townMenu(v_day):
-    # This function prints out the town menu
-    # Input: v_day: Contains the value of the current day
-    # Output: -
+    """
+    This function prints out the town menu
+    @param v_day Contains the value of the current day
+    @author Dong Han
+    """
 
     print(f"Day {v_day}. You are in a town.")
     print("1) View Character")
@@ -71,19 +74,24 @@ def townMenu(v_day):
     print("6) Exit Game")
 
 def viewCharacter(player):
-    # This function displays the player's statistics
-    # Input: player object
-    # Output: -
+    """
+    This function displays the player's statistics
+    @param player The entity object of player
+    @author Dong Han
+    """
 
-    print(name)
-    print(f" Damage: {damage}")
-    print(f"Defence: {defence}")
-    print(f"    HP : {health}")
+    print(player.name)
+    print(f" Damage: {player.damage}")
+    print(f"Defence: {player.defence}")
+    print(f"    HP : {player.health}")
 
 def rest(day, health):
-    # This function restores the player's health to 20, and add 1 to day.
-    # Input: Day, Health
-    # Output: Day, Health
+    """
+    This function restores the player's health to 20, and add 1 to day.
+    @param day The current day value
+    @param health The current health value
+    @author Dong Han
+    """
 
     day = day + 1
     health = 20
@@ -93,11 +101,15 @@ def rest(day, health):
     return day, health
 
 def saveGame(health, location, day, full_path=None):
-    # This function saves the game
-    # Input: health: players' health
-    #        location: current location of player
-    #        day: current day
-    # Output: filename.txt
+    """
+    This function saves the game \n
+    Output: filename.txt
+    @param health Players' health
+    @param location Current location of player
+    @param day Current day
+    @param fullpath Path of the saveFile
+    @author Dong Han
+    """
 
     #Path of current working directory
     #path = os.getcwd()
@@ -169,14 +181,14 @@ def checkLocation(coordinates):
     # Output: Player location
 
     townCoordinates = ["0,0", "3,1", "5,2", "1,3", "4,6"]
-    orbCoordinates = "7,7"
+    kingCoordinates = "7,7"
 
     if (coordinates in townCoordinates):
-        return("a town")
-    elif (coordinates == orbCoordinates):
-        return("the orb")
+        return("You are in a town")
+    elif (coordinates == kingCoordinates):
+        return("You see the Rat King!")
     else:
-        return("the open")
+        return("You are in the open")
 
 def combatMenu(enemy):
     print("\nEncounter! - " + enemy.name)
@@ -186,18 +198,41 @@ def combatMenu(enemy):
     print("1) Attack\n2) Run")
     
 
-def attack(player, enemy):
-    # This function is responsible for the attack mechanics in the game
-    # Input: Player object, enemy object
-    # Output: Player object, enemy object, status
+def attack(player, enemy, orb=False):
+    """
+    This function is responsible for the attack mechanics in the game   \n
+    Output: Player object, enemy object, status                         
+    @param player The player object (Entity)
+    @param enemy The enemy object (Entity)
+
+    @return player The updated player object (Entity)
+    @return enemy The updated enemy object (Entity)
+    @return status The status of the battle
+
+    @author Dong Han
+    """
+
     #status 0 = Player wins
     #status 1 = Player loses
     #status 2 = Battle continues
 
-    #Calculate player damage using player damage range - enemy defence
-    playerDamage = pickRandomNumber(player.damage) - enemy.defence
-    enemy.health = enemy.health - playerDamage
-    print(f"You deal {playerDamage} damage to the {enemy.name}")
+
+    # 0 = unkillable
+    # 1 = killable
+    killable = checkKillable(enemy, orb)
+
+    if(killable == 1):
+        #Calculate player damage using player damage range - enemy defence
+        playerDamage = pickRandomNumber(player.damage) - enemy.defence
+        #Check if player damage is 0
+        if(playerDamage < 0):
+            playerDamage = 0
+        enemy.health = enemy.health - playerDamage
+        print(f"You deal {playerDamage} damage to the {enemy.name}")
+        print(enemy.health)
+    elif(killable == 0):
+        # Rat king not killable
+        print("Rat King has taken no damage! You need the orb of power!")
     #checks if enemy health is less than 0
     if(enemy.health <= 0):
         status = 0
@@ -206,6 +241,9 @@ def attack(player, enemy):
     else:
         #Calculate enemy damage using enemy damage range - player defence
         enemyDamage = pickRandomNumber(enemy.damage) - player.defence
+        #Check if player damage is 0
+        if(enemyDamage < 0):
+            enemyDamage = 0
         player.health = player.health - enemyDamage
         print(f"Ouch! The {enemy.name} hit you for {enemyDamage} damage!")
         print(f"You have {player.health} HP left.")
@@ -220,7 +258,11 @@ def attack(player, enemy):
 
 
 def pickRandomNumber(damage):
-
+    """
+    This function picks a random number from a string of numbers. 
+    @param The damage values in string format. e.g.("2-5")
+    @author Dong Han
+    """
     #"2-4" - Removes the dash and adds the digit into list1
     list1 = [int(s) for s in damage.split("-") if s.isdigit()]
     #use range() to create a list of numbers using the 2 values in list1
@@ -239,5 +281,24 @@ def outdoorMenu():
 def run():
     print("You run and hide")
 
-def checkKillable():
+def checkKillable(enemy, orb):
+    """
+    This function checks whether if the enemy is damageable
+    @param enemy The enemy object (Entity)
+    @param orb The orb object (bool)
+    # Output: 0 - Enemy unkillable
+    #         1 - Enemy killable
+    @author Dong Han
+    """
+
+    # Check if enemy is Rat King
+    if(enemy.name == "Rat King" and orb == True):
+        return 1
+
+    elif(enemy.name == "Rat King" and orb == False):
+        return 0
+
+    else:
+        return 1
+
     

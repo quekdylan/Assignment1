@@ -30,7 +30,7 @@ while(True):
 #Main program    
 while(True):
     # If player is in a town
-    if(checkLocation(v_location) == "a town"):
+    if(checkLocation(v_location) == "You are in a town"):
         townMenu(v_day)
         choice = int(input("Enter your choice: "))
         # View Character
@@ -52,7 +52,7 @@ while(True):
                 if(move(v_location, direction, v_day) != 0):
                     v_location, v_day = move(v_location, direction, v_day)
                     print(viewMap(v_location))
-                    print("Day " + str(v_day) + ". You are in " + checkLocation(v_location))
+                    print("Day " + str(v_day) + " " + checkLocation(v_location))
                     break
 
         # Rest
@@ -75,7 +75,7 @@ while(True):
             continue
     
     # Rat encounter
-    elif(checkLocation(v_location) == "the open" and v_rat_encounter == False):
+    elif(checkLocation(v_location) == "You are in the open" and v_rat_encounter == False):
         enemy = Entity('Rat', 10, '1-3', 1)
         in_combat = True
         while(in_combat):
@@ -84,7 +84,7 @@ while(True):
 
             # Attack
             if(combatChoice == '1'):
-                player, enemy, status = attack(player, enemy)
+                player, enemy, status = attack(player, enemy, player.orb)
                 if(status == 2):
                     continue
                 elif(status == 0):
@@ -107,10 +107,70 @@ while(True):
                     enemy = Entity('Rat', 10, '1-3', 1)
 
                 # View Map
-                elif(combatChoice == '2'):
+                elif(outdoorChoice == '2'):
                     print(viewMap(v_location))
                     # Rat encounter (Health is reset)
                     enemy = Entity('Rat', 10, '1-3', 1)
+
+                # Move
+                elif(outdoorChoice == '3'):
+                    in_combat = False
+                    while(True):
+                        print(viewMap(v_location))
+                        print("W = up; A = left; S = down; D = right")
+                        direction = input("Your Move: ")
+                        if(move(v_location, direction, v_day) != 0):
+                            v_location, v_day = move(v_location, direction, v_day)
+                            print(viewMap(v_location))
+                            print("Day " + str(v_day) + " " + checkLocation(v_location))
+                            break
+
+                # Exit Game
+                elif(outdoorChoice == '4'):
+                    exitGame()
+                else:
+                    print("Invalid option. Please try again.")
+            else:
+                print("Invalid option. Please try again.")
+        continue
+
+    
+    # Rat King encounter
+    elif(checkLocation(v_location) == "You see the Rat King!"):
+        enemy = Entity('Rat King', 25, '8-12', 5)
+        in_combat = True
+        while(in_combat):
+            combatMenu(enemy)
+            combatChoice = input("Enter Choice: ")
+
+            # Attack
+            if(combatChoice == '1'):
+                player, enemy, status = attack(player, enemy, player.orb)
+                if(status == 2):
+                    continue
+                elif(status == 0):
+                    print('The Rat King is dead! You are victorious!')
+                    in_combat = False
+                elif(status == 1):
+                    print('You died. Game over.')
+                    exitGame()
+            # Run
+            elif(combatChoice == '2'):
+                run()
+                outdoorMenu()
+                outdoorChoice = input("Enter choice: ")
+
+                # View Character
+                if(outdoorChoice == '1'):
+                    viewCharacter(player)
+                    # Rat encounter (Health is reset)
+                    enemy = Entity('Rat King', 25, '8-12', 5)
+
+                # View Map
+                elif(combatChoice == '2'):
+                    print(viewMap(v_location))
+                    # Rat encounter (Health is reset)
+                    enemy = Entity('Rat King', 25, '8-12', 5)
 
                 # Move
                 elif(combatChoice == '3'):
@@ -122,7 +182,7 @@ while(True):
                         if(move(v_location, direction, v_day) != 0):
                             v_location, v_day = move(v_location, direction, v_day)
                             print(viewMap(v_location))
-                            print("Day " + str(v_day) + ". You are in " + checkLocation(v_location))
+                            print("Day " + str(v_day) + " " + checkLocation(v_location))
                             break
 
                 # Exit Game
@@ -135,7 +195,7 @@ while(True):
         continue
 
     # If player is in the open and has already encountered a rat
-    elif(checkLocation(v_location) == "the open"):
+    elif(checkLocation(v_location) == "You are in the open"):
         outdoorMenu()
         outdoorChoice = input("Enter choice: ")
 
@@ -156,7 +216,7 @@ while(True):
                 if(move(v_location, direction, v_day) != 0):
                     v_location, v_day = move(v_location, direction, v_day)
                     print(viewMap(v_location))
-                    print("Day " + str(v_day) + ". You are in " + checkLocation(v_location))
+                    print("Day " + str(v_day) + " " + checkLocation(v_location))
                     break
 
         # Exit Game

@@ -19,11 +19,11 @@ class Entity:
     def __init__(self, name, health, damage, defence):
         """
         This function creates the entity object
-        @param name The name of the entity
-        @param health The health of the entity
-        @param damage The damage of the entity
-        @param defence The defence of the entity
-        @param orb True if the entity is holding the Orb
+        @param name The name of the entity (string)
+        @param health The health of the entity (int)
+        @param damage The damage of the entity (string)
+        @param defence The defence of the entity (int)
+        @param orb True if the entity is holding the Orb (bool)
         @param self -
         """
         self.name = name

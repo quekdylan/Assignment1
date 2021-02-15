@@ -255,6 +255,7 @@ def attack(player, enemy, orb=False):
     elif(killable == 0):
         # Rat king not killable
         print("Rat King has taken no damage! You need the orb of power!")
+        
     #checks if enemy health is less than 0
     if(enemy.health <= 0):
         status = 0

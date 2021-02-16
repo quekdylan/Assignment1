@@ -1,6 +1,6 @@
 # Assignment 1
 
-<a href="https://docs.google.com/presentation/d/1-gW-yemgnCwVeZ_pLfhp-aHHJwGkjRLzZ_c4Pw_dLwA/edit?usp=sharing">Link to slides</a>
+<a href="https://docs.google.com/presentation/d/1-gW-yemgnCwVeZ_pLfhp-aHHJwGkjRLzZ_c4Pw_dLwA/edit?usp=sharing">Link to slides</a><br/>
 <strong>RatVenture</strong>
 <p>
     RatVenture is a computer role-playing game where the player is the hero. The world is being invaded by the Rat King and his endless rat minions. The only way to defeat the Rat King is to find the Orb of Power located in the faraway land of Katalina. 

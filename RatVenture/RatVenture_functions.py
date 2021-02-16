@@ -117,7 +117,7 @@ def saveGame(health, location, day, full_path=None):
     #path = os.getcwd()
     if(full_path == None):
         full_path = (os.path.dirname(__file__)  + "\\" + "save.txt")
-        print(full_path)
+        print("Game saved.")
 
     #Full path of savefile
     #full_path = (path + "\\" + "RatVenture" + "\\" +fileName)

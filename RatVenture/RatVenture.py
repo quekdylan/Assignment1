@@ -21,6 +21,7 @@ while(True):
         break
 
     elif(option == 2):
+
         player, v_location, v_day = resumeGame(v_filename)
         break
 
@@ -123,7 +124,7 @@ while(True):
                 elif(outdoorChoice == '3'):
                     in_combat = False
                     while(True):
-                        print(viewMap(v_location))
+                        print(viewMap(v_location, v_town_locations, v_orb_location, player.orb))
                         print("W = up; A = left; S = down; D = right")
                         direction = input("Your Move: ")
                         if(move(v_location, direction, v_day) != 0):
